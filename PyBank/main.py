@@ -24,6 +24,14 @@ with open(budget_data_csv, 'r') as csvfile:
     totalmonths = 0
     total = 0
 
+    # initializing variable
+    # tuesday's lecture and xpert
+    previousvalue = 0
+
+    # list
+    # monday's slides and xpert
+    changes = []
+
     # looping through rows in budget_data.csv
     # source: loop_de_loop_solution.py
     for row in csvreader:
@@ -32,9 +40,30 @@ with open(budget_data_csv, 'r') as csvfile:
         # hint from agustín
         totalmonths = totalmonths + 1
 
-        # sum of second row's lines excepter header in budget_data.csv for total
+        # sum of second row's lines except header in budget_data.csv for total
         # xpert
         total = total + int(row[1])
+
+        # excluding first row from conditional
+        # xpert
+        if totalmonths > 1:
+
+            # remaining conditional
+            # conditionals_solution.py and teaching assistant's solution
+            change = int(row[1]) - previousvalue
+            
+            # adding change from one line and another to list
+            # monday's slides
+            changes.append(change)
+
+        # re-initializing variable after conditional
+        # xpert
+        previousvalue = int(row[1])
+        
+    # calculating average change after loop
+    # source: https://docs.python.org/3/library/functions.html#sum and xpert
+    averagechange = sum(changes) / len(changes)
+
 
     # printing results in terminal
     # source: variables_solution.py
@@ -42,6 +71,11 @@ with open(budget_data_csv, 'r') as csvfile:
     print("------------------------------")
     print("Total Months: " + str(totalmonths))
     print("Total: $" + str(total))
-    # print("Average Change: " + str(averagechange))
+    
+    # printing averagechange in terminal after rounding decimal
+    # source: variables solution.py and xpert
+    print("Average Change: $" + str(round(averagechange, 2)))
+
+    # printing results in terminal
     # print("Greatest Increase in Profits: " + str(giip))
     # print("Greatest Decrease in Profits: " + str(gdip))

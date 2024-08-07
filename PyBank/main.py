@@ -19,24 +19,29 @@ with open(budget_data_csv, 'r') as csvfile:
     # source: graduation_functions.py
     header = next(csvreader)
 
-    # initializing variable
+    # initializing variables
     # tuesday's lecture
     totalmonths = 0
+    total = 0
 
     # looping through rows in budget_data.csv
     # source: loop_de_loop_solution.py
     for row in csvreader:
 
-        # counting rows in budget_data.csv for total months
+        # counting lines except header in budget_data.csv for total months
         # hint from agustín
         totalmonths = totalmonths + 1
+
+        # sum of second row's lines excepter header in budget_data.csv for total
+        # xpert
+        total = total + int(row[1])
 
     # printing results in terminal
     # source: variables_solution.py
     print("Financial Analysis")
     print("------------------------------")
     print("Total Months: " + str(totalmonths))
-    # print("Total: " + str(total))
+    print("Total: $" + str(total))
     # print("Average Change: " + str(averagechange))
     # print("Greatest Increase in Profits: " + str(giip))
     # print("Greatest Decrease in Profits: " + str(gdip))

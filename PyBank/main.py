@@ -36,11 +36,11 @@ with open(budget_data_csv, 'r') as csvfile:
     # source: xpert
     dateforgiip = "random string"
 
-    #initiating variable assigned to highest integer
-    # source: 
+    # initiating variable assigned to highest integer
+    # source: teaching assistant's solution
     gdip = 1000000000
 
-    #initiating variable
+    # initiating variable
     # source: xpert
     dateforgdip = "random string"
 
@@ -60,7 +60,7 @@ with open(budget_data_csv, 'r') as csvfile:
         # xpert
         total = total + int(row[1])
 
-        # excluding first row from conditional
+        # excluding header from conditional
         # xpert
         if totalmonths > 1:
 

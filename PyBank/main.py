@@ -28,6 +28,22 @@ with open(budget_data_csv, 'r') as csvfile:
     # tuesday's lecture and xpert
     previousvalue = 0
 
+    # initiating variable assigned to lowest integer
+    # source: teaching assistant's solution
+    giip = 0
+
+    # initiating variable
+    # source: xpert
+    dateforgiip = "random string"
+
+    #initiating variable assigned to highest integer
+    # source: 
+    gdip = 1000000000
+
+    #initiating variable
+    # source: xpert
+    dateforgdip = "random string"
+
     # list
     # monday's slides and xpert
     changes = []
@@ -56,14 +72,25 @@ with open(budget_data_csv, 'r') as csvfile:
             # monday's slides
             changes.append(change)
 
-        # re-initializing variable after conditional
+            # conditional
+            # conditionals_solution.py
+            if change > giip:
+                giip = change
+                dateforgiip = row[0]
+            
+            # conditional
+            # conditionals_solution.py
+            if change < gdip:
+                gdip = change
+                dateforgdip = row[0]
+
+        # re-initializing variable after conditional while looping
         # xpert
         previousvalue = int(row[1])
         
     # calculating average change after loop
     # source: https://docs.python.org/3/library/functions.html#sum and xpert
     averagechange = sum(changes) / len(changes)
-
 
     # printing results in terminal
     # source: variables_solution.py
@@ -77,5 +104,6 @@ with open(budget_data_csv, 'r') as csvfile:
     print("Average Change: $" + str(round(averagechange, 2)))
 
     # printing results in terminal
-    # print("Greatest Increase in Profits: " + str(giip))
-    # print("Greatest Decrease in Profits: " + str(gdip))
+    # source: variables_solution.py
+    print("Greatest Increase in Profits: " + dateforgiip + " $" + str(giip))
+    print("Greatest Decrease in Profits: " + dateforgdip + " $" + str(gdip))

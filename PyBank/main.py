@@ -107,3 +107,18 @@ with open(budget_data_csv, 'r') as csvfile:
     # source: variables_solution.py
     print("Greatest Increase in Profits: " + dateforgiip + " $" + str(giip))
     print("Greatest Decrease in Profits: " + dateforgdip + " $" + str(gdip))
+
+# results.txt's relative location
+# source: cereal.py
+results_txt = os.path.join("..", "PyBank", "analysis", "results.txt")
+
+# exporting results
+# source: xpert
+with open(results_txt, 'w') as txtfile:
+    txtfile.write("Financial Analysis\n")
+    txtfile.write("------------------------------\n")
+    txtfile.write("Total Months: " + str(totalmonths) + "\n")
+    txtfile.write("Total: $" + str(total) + "/n")
+    txtfile.write("Average Change: $" + str(round(averagechange, 2)) + "\n")
+    txtfile.write("Greatest Increase in Profits: " + dateforgiip + " $" + str(giip) + "\n")
+    txtfile.write("Greatest Decrease in Profits: " + dateforgdip + " $" + str(gdip))

@@ -126,3 +126,21 @@ with open(election_data_csv, 'r') as csvfile:
     print("------------------------------")
     print("Winner: " + winner)
     print("------------------------------")
+
+# results.txt's relative location
+# source: cereal.py
+results_txt = os.path.join("..", "PyPoll", "analysis", "results.txt")
+
+# exporting results
+# source: xpert
+with open(results_txt, 'w') as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write("------------------------------\n")
+    txtfile.write("Total Votes: " + str(totalvotes) + "\n")
+    txtfile.write("------------------------------\n")
+    txtfile.write(firstcandidate + ": " + str(round(firstpercentage, 3)) + "% " + "(" + str(firsttotal) + ")\n")
+    txtfile.write(secondcandidate + ": " + str(round(secondpercentage, 3)) + "% " + "(" + str(secondtotal) + ")\n")
+    txtfile.write(thirdcandidate + ": " + str(round(thirdpercentage, 3)) + "% " + "(" + str(thirdtotal) + ")\n")
+    txtfile.write("------------------------------\n")
+    txtfile.write("Winner: " + winner + "\n")
+    txtfile.write("------------------------------\n")

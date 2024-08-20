@@ -1,8 +1,8 @@
 # python-challenge
 third week's assignment
 
-Hana Wasif
-Instructor Anish Talsania
+HanaDoubleU
+Instructor A.T.
 Data Analytics
 8 August 2024
 

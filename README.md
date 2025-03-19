@@ -1,13 +1,6 @@
 # python-challenge
 third week's assignment
 
-HanaDoubleU
-Instructor A.T.
-Data Analytics
-8 August 2024
-
-
-
 My approach to PyBank's instructions was to take them, step-by-step.
 
     I knew that they involved budget_data.csv, so I set my sights on importing it to main.py and opening it as a reading file in order to analyze it with my script.
